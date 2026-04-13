@@ -38,3 +38,7 @@ A simple Flask-based web application that generates workout routines based on th
    app.py 
  
 4. Open in browser: http://127.0.0.1:5000/
+
+OR
+
+Use Render Link: https://workout-app-1-h1r9.onrender.com/
