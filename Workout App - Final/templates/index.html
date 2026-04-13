@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workout Generator</title>
+    <link rel="icon" href="{{ url_for('static', filename='WorkoutIcon.jpeg') }}">
+</head>
+<style>
+    body{
+        font-family: Roboto;
+        background-color: #2d3748;
+        color: white;
+        text-align: center;
+    }
+
+    pre{
+        background-color: #575f6d;
+        padding: 10px;
+        border-radius: 5px;
+        width: fit-content;
+        text-align: center;
+        margin: 20px auto; 
+        font-size: 20px;
+    }
+    
+    button
+    {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+    }
+    select
+    {
+        
+    font-size: 20px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    background-color: #6f7379;
+    color: white;
+
+    }
+    
+</style>
+
+<body>
+    
+
+<h1 style="font-weight: 300;">Hello! <br><br> Welcome to the Workout Generator! Start by selcting either 'Push', 'Pull', or 'Legs'</h1>
+<p>Select Yesterdays Workout:</p>
+
+<form method="POST">
+
+    <button name="action" value="last">Last workout</button>
+    {% if last_display %}
+    <p>This was your last workout:</p>
+        <pre>{{ last_display }}</pre>
+    {% endif %}
+
+   <br><br>
+
+    <select name="workout">
+        <option value="push" {% if selected_workout == "push" %}selected{% endif %}>Push</option>
+        <option value="pull" {% if selected_workout == "pull" %}selected{% endif %}>Pull</option>
+        <option value="legs" {% if selected_workout == "legs" %}selected{% endif %}>Legs</option>
+    </select>
+
+    <br><br>
+
+    <button name="action" value="generate">Generate</button>
+
+</form>
+
+{% if workout %}
+    <h3 style="font-weight: 300;">Here is the Workout:</h3>
+    <pre>{{ workout }}</pre>
+{% endif %}
+
+<a href="{{ url_for('weight') }}">
+    <button type="button">Weight Tracker</button>
+
+</a>
+
+
+</body>
+</html>
