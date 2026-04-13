@@ -5,7 +5,7 @@ A simple Flask-based web application that generates workout routines based on th
 ## Features
 
 - Push/Pull/Legs workout rotation
-- Randomized exercise selection from a JSON dataset
+- Randomised exercise selection from a JSON dataset
 - Tracks last workout using file storage
 - Weight tracking system with saved history
 - Simple web interface using HTML/CSS
